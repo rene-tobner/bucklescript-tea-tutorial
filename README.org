@@ -6,7 +6,8 @@
 - npm run build
 - open release/dev.html in your browser: 42!
 
-** DONE gotchas in 1st part / missing in tut: http://blog.overminddl1.com/posts/bucklescript-tea-game-overbots-pt1-setup/
+** DONE gotchas in 1st part / missing in tut
+http://blog.overminddl1.com/posts/bucklescript-tea-game-overbots-pt1-setup/
 
 - npm install npm-run-all: for run-s, run-p used in package.json script section
 - 1st part: npm run build does not work with empty scss file (filled in 2nd part)
