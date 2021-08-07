@@ -20,6 +20,25 @@
   - rollup config format change: see rollup.config.js
 - some warnings regarding npm and node v10.24.0 (current standard in Debian Buster), but so far alright! (maybe use yarn as npm replacement?)
 
+** gotchas in 2nd part
+*** short hand record syntax vs. explicit module function
+#+BEGIN_SRC diff
+ let main =
+   App.standardProgram {
+-    init;
+-    update;
+-    view;
+-    subscriptions;
++    init = init;
++    update = update;
++    view = Overbots_view.view;
++    subscriptions = subscriptions;
+ }
+#+END_SRC
+changing above or:
+
+"Error: Unbound record field Overbots_view.init"
+
 * Reading
 **  types as sets
 *** product types ("records") vs. sum types ("enums")
