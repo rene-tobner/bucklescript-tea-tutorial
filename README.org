@@ -46,6 +46,19 @@ changing above or:
 Warning 3: deprecated: Pervasives.string_of_float
 Please use Js.Float.toString instead, string_of_float generates unparseable floats
 #+END_SRC
+** gotchas in 4th part
+*** cost_resource(s) fn missing in post
+- but in repo, tag: pt4
+*** variant of type msg missing in post
+- add: `| ActionButtonClicked of button_id` in overbots_types.ml
+#+BEGIN_SRC ocaml
+type msg =
+  | UpdateFrame of Tea.AnimationFrame.t
+  | ActionButtonClicked of button_id
+[@@bs.deriving {accessors}]
+#+END_SRC
+*** moving type msg
+- of overbots_types.ml after button_id, otherwise `button_id` undefined
 * Reading
 **  types as sets
 *** product types ("records") vs. sum types ("enums")
