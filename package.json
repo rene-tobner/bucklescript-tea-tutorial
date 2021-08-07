@@ -1,0 +1,35 @@
+{
+  "name": "overbots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:bsb": "bsb -make-world",
+    "build:js": "rollup -c",
+    "build:scss": "node-sass --include-path scss scss/overbots.scss css/overbots.css",
+    "build:css": "postcss --use autoprefixer -o release/overbots.css css/overbots.css",
+    "build": "run-s build:bsb build:js build:scss build:css",
+    "watch:bsb": "bsb -w",
+    "watch:js": "rollup -c -w",
+    "watch:scss": "nodemon -e scss -x \"npm run build:scss\"",
+    "watch:css": "nodemon -e css -x \"npm run build:css\"",
+    "prewatch": "run-s build",
+    "watch": "run-p watch:bsb watch:js watch:scss watch:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "bs-platform": "^9.0.2",
+    "bucklescript-tea": "^0.15.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "rollup": "^2.56.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-watch": "^4.3.1"
+  }
+}

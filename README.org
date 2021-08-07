@@ -1,0 +1,21 @@
+* Working through OvermindDL1's Bucklescript-tea tutorial
+- 1st part: http://blog.overminddl1.com/posts/bucklescript-tea-game-overbots-pt1-setup/
+- setup on Debian/Ubuntu: sudo apt-get install nodejs npm
+- git clone this repo
+- npm install
+- npm run build
+- open release/dev.html in your browser: 42!
+
+** DONE gotchas in 1st part / missing in tut: http://blog.overminddl1.com/posts/bucklescript-tea-game-overbots-pt1-setup/
+
+- npm install npm-run-all: for run-s, run-p used in package.json script section
+- 1st part: npm run build does not work with empty scss file (filled in 2nd part)
+- rollup.config.js needs:
+  - import node_resolve from 'rollup-plugin-node-resolve';
+    - see: https://github.com/tcoopman/bucklescript-tea-starter-kit/blob/master/configs/rollup.development.js
+      - livereload possible, too
+  - plugins: [
+      node_resolve({ module: true, browser: true })
+    ]
+  - rollup config format change: see rollup.config.js
+- some warnings regarding npm and node v10.24.0 (current standard in Debian Buster), but so far alright! (maybe use yarn as npm replacement?)
