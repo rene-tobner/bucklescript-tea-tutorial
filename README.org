@@ -19,3 +19,26 @@
     ]
   - rollup config format change: see rollup.config.js
 - some warnings regarding npm and node v10.24.0 (current standard in Debian Buster), but so far alright! (maybe use yarn as npm replacement?)
+
+* Reading
+**  types as sets
+*** product types ("records") vs. sum types ("enums")
+- https://guide.elm-lang.org/appendix/types_as_sets.html
+  - Bool/bool is a sum type: two values, either true or false (cardinality of two)
+  - product types have standard OCaml syntax of asterisk (*) as infix tuple constructor
+    - OCaml: value of (True, False) has type (bool * bool), forming the product of two sum types by multiplication (*)
+    - Elm: value of (True, False) has type (Bool, Bool)
+*** TODO Haskell/Elm types vs. Ocaml types
+**** OCaml
+#+BEGIN_SRC ocaml
+type state =
+  | Running
+  | Paused of int
+
+type 'model debug_model = {
+  history : (string * 'model) list;
+  state : state;
+  show_details : bool;
+}
+#+END_SRC
+[[https://github.com/OvermindDL1/bucklescript-tea/blob/master/src-ocaml/tea_debug.ml][source]]
