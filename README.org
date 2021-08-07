@@ -40,6 +40,12 @@ changing above or:
 
 "Error: Unbound record field Overbots_view.init"
 
+** gotchas in 3rd part
+*** TODO unparseable floats?
+#+BEGIN_SRC
+Warning 3: deprecated: Pervasives.string_of_float
+Please use Js.Float.toString instead, string_of_float generates unparseable floats
+#+END_SRC
 * Reading
 **  types as sets
 *** product types ("records") vs. sum types ("enums")
